@@ -4,8 +4,6 @@ const http = require("http");
 const url = process.argv[2];
 http.get(url, function callback(res) {
     const { statusCode } = res;
-    let resCount = 0;
-    // resCount = res.length;
     let error;
     if (statusCode !== 200) {
         error = new Error("Request Failed.\n" + `Status Code: ${statusCode}`);
